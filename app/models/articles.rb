@@ -1,4 +1,4 @@
-class Article < ApplicationRecord
+class Articles < ApplicationRecord
     validates :title, presence: true
     validates :content, presence: true
 end
