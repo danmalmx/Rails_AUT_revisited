@@ -1,21 +1,21 @@
 class ArticlesController < ApplicationController
   
   def index
-    @articles = Article.all
+    @articles = Articles.all
   end
 
   def new
-    @article = Article.new
+    @article = Articles.new
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = Articles.new(article_params)
   end
 
   def show
-    @article =article(params :id)
+    @article = article(params :id)
 
-  end
+  end 
 
   def update
   end
