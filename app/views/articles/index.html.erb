@@ -1,6 +1,17 @@
-<% @articles.each do |article| %>
-    <p></p><%= article.title %>
-    <p></p><%= article.content %>
-<% end %>
+<h1>Listing articles</h1>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th></th>
+    </tr>
+</table>
+
+    <% @articles.each do |article| %>
+        <p></p><%= article.title %>
+        <p></p><%= article.content %>
+    <% end %>
+</table>
 
 <%= link_to "New Article", new_article_path %>
