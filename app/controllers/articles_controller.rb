@@ -17,8 +17,10 @@ class ArticlesController < ApplicationController
 
     if @article.save
       redirect_to articles_path
+      flash[:success] = "Article was successfully created."
     else
       render 'new'
+      flash[:error] = "Article was not created, try again."
     end
   end
 

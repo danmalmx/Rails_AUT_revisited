@@ -13,3 +13,13 @@ end
 When("I fill in {string} with {string}") do |expected_content, text|
     fill_in(expected_content, with: text)
 end
+
+When("I visit the site") do
+    visit root_path
+end
+
+Given("the following articles exist") do |table|
+    table.hashes.each do |article|
+        Articles.create!(article)
+    end
+end
