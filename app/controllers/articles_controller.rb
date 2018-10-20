@@ -4,23 +4,22 @@ class ArticlesController < ApplicationController
     @articles = Articles.all
   end
 
+  def show
+    @article = Articles.find(params[:id])
+  end 
+
   def new
     @article = Articles.new
   end
 
   def create
-    @article = Articles.new(article_params)
+    @article = Articles.new(article_param)
 
-    @article.save
-    redirect_to @article
-  end
-
-  def show
-    @article = Articles.find(params[:id])
-  end 
-
-  def update
-
+    if @article.save
+      redirect_to articles_path
+    else
+      render 'new'
+    end
   end
 
   private

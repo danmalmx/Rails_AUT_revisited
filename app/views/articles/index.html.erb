@@ -9,8 +9,11 @@
 </table>
 
     <% @articles.each do |article| %>
-        <p></p><%= article.title %>
-        <p></p><%= article.content %>
+        <tr>
+            <td><p></p><%= article.title %></td>
+            <td><p></p><%= article.content %></td>
+            <td><p></p><%= link_to 'Show', article_path(article) %></td>
+        </tr>
     <% end %>
 </table>
 

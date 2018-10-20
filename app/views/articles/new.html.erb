@@ -1,4 +1,4 @@
-<%= form_with scope: :articles, local: true do |f| %>
+<%= form_with scope: :articles, url: articles_path, local: true do |f| %>
     <p>
         <%= f.label :title %><br>
         <%= f.text_field :title %>
@@ -10,6 +10,6 @@
     </p>
 
     <p>
-        <%= f.submit name="Create Article"%>
+        <%= f.submit "Create Article" %>
     </p>
 <% end %>

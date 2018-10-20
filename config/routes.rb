@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'articles/index'
-  post 'articles/create'
-  root controller: :articles, action: :index
   resources :articles
+
+  root controller: :articles, action: :index
+  
+  get 'articles/index', to: 'articles#index'
+  post 'articles/:id', to: 'articles#create'
 end
