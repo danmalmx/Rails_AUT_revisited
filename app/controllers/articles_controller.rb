@@ -12,6 +12,10 @@ class ArticlesController < ApplicationController
     @article = Articles.new
   end
 
+  def edit
+    @article = Articles.find(params[:id])
+  end
+
   def create
     @article = Articles.new(article_param)
 
@@ -20,9 +24,19 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article was successfully created."
     else
       render 'new'
-      flash[:error] = "Article was not created, try again."
     end
   end
+
+  def update
+    @article = Articles.find(params[:id])
+
+    if @article.update(article_param)
+      redirect_to articles_path
+    else 
+      render 'edit'
+    end
+  end
+
 
   private
     def article_param
