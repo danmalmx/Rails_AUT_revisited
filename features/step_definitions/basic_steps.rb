@@ -4,8 +4,8 @@
     end
 end
 
-When("I fill in {string} with {string}") do |expected_content, text|
-    fill_in(expected_content, with: text)
+When("I fill in {string} with {string}") do |field, text|
+    fill_in(field, with: text)
 end
 
 Given("I visit the {string} page") do |string|

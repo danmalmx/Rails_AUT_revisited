@@ -9,9 +9,11 @@ Feature: Edit articles
             | title                 | content                                  |
             | Learn Rails 5         | Excited about learning a new framework   |
         Given I visit the 'landing' page
+        When I click 'Edit' button
+        And I visit the 'edit' page
+
 
     Scenario: Successfully able to edit article
-        When I click 'Edit' button
         And I fill in 'Title' with 'Learning Rails again'
         And I fill in 'Content' with 'Never to late to learn again'
         And I click 'Save Article' button
