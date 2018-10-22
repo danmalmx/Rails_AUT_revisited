@@ -11,7 +11,7 @@ When("I click {string} button") do |button|
 end
 
 Given("I click {string}") do |string|
-    expect(page).to have_selector('table tr td').click('Edit')
+    find_button('Edit').click
 end
 
 When("I fill in {string} with {string}") do |expected_content, text|
