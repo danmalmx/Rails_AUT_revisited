@@ -4,10 +4,14 @@ end
 
 When("I click {string} link") do |link|
     click_link link
-end
+end 
 
 When("I click {string} button") do |button|
-    click_button button
+    click_button button 
+end
+
+Given("I click {string}") do |string|
+    expect(page).to have_selector('table tr td').click('Edit')
 end
 
 When("I fill in {string} with {string}") do |expected_content, text|
