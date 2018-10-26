@@ -28,6 +28,7 @@ When("stop") do
     save_and_open_page
 end                 
 
-Given("I visit the {string}") do |string|
-    visit edit_article_path
+Given("I visit {string}") do |article|
+    article = edit_article_path(article)
+    visit article
 end

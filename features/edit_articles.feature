@@ -8,8 +8,9 @@ Feature: Edit articles
         Given the following articles exist
             | title         | content                                |
             | Learn Rails 5 | Excited about learning a new framework |
-        Given I visit the 'Edite article'
+        Given I visit 'Edit article'
         Then stop
+
     Scenario: Successfully able to edit article
         And I fill in 'Title' with 'Learning Rails again'
         And I fill in 'Content' with 'Never to late to learn again'
