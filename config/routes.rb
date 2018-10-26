@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   
   get 'articles/index', to: 'articles#index'
   post 'articles/:id', to: 'articles#create'
+  # patch 'articles/:id', to: 'articles#update'
 end

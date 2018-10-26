@@ -12,14 +12,22 @@ Given("I visit the {string} page") do |string|
     visit root_path
 end
 
-When("I go to the {string} page") do |article|
-    visit edit_article_path(article)
-  end
-
 When("I click {string} link") do |link|
     click_link link
 end 
 
 When("I click {string} button") do |button|
     click_button button 
+end
+
+When("I click {string}") do |id|
+    visit edit_article_path
+end
+
+When("stop") do
+    save_and_open_page
+end                 
+
+Given("I visit the {string}") do |string|
+    visit edit_article_path
 end
