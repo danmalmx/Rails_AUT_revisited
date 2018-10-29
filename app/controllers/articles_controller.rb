@@ -20,8 +20,8 @@ class ArticlesController < ApplicationController
     @article = Articles.new(article_param)
 
     if @article.save
-      redirect_to articles_path
       flash[:success] = "Article was successfully created."
+      redirect_to articles_path(@article)
     else
       render 'new'
     end

@@ -12,23 +12,27 @@ Given("I visit the {string} page") do |string|
     visit root_path
 end
 
-When("I click {string} link") do |link|
+When("I click {string}") do |link|
     click_link link
 end 
 
-When("I click {string} button") do |button|
-    click_button button 
+Then("I click {string} button") do |button|
+    click_on button
 end
 
-When("I click {string}") do |id|
-    visit edit_article_path
+Given("I am on the {string} page") do |edit_page|
+    visit edit_article_path(@article )
 end
 
-When("stop") do
+Given("I am on the Edit article page") do
+    visit edit_article_path(@article)
+end
+
+Then("I should see {string} button") do |edit|
+    expect(page).to have_button edit
+end
+
+
+Then("stop") do
     save_and_open_page
-end                 
-
-Given("I visit {string}") do |article|
-    article = edit_article_path(article)
-    visit article
 end

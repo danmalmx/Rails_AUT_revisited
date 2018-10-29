@@ -8,12 +8,14 @@ Feature: Edit articles
         Given the following articles exist
             | title         | content                                |
             | Learn Rails 5 | Excited about learning a new framework |
-        Given I visit 'Edit article'
-        Then stop
+        And I visit the 'landing' page
+        
 
     Scenario: Successfully able to edit article
+        Then I should see "Learn Rails 5"
+        And I click 'Edit' button
         And I fill in 'Title' with 'Learning Rails again'
         And I fill in 'Content' with 'Never to late to learn again'
-        And I click 'Save Article' button
+        And I click 'Save Article'
         Then I should be on "landing" page
         And I should see "Article was successfully updated."
