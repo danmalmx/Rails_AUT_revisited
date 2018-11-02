@@ -2,10 +2,14 @@ Then("I should see {string}") do |content|
     expect(page).to have_content content
 end
 
-Then("I should be on {string} page") do | success |
-    expect(page).to have_selector ".success", text: "Article was successfully created."
+Then("I should see {string} button") do |edit|
+    expect(page).to have_button edit
 end
 
-# Then("I visit {string} page") do |article|
-#     expect edit_article_path(article)
-# end
+Then("I should be on {string} page") do  |string|
+    expect(current_path).to eq articles_path
+end
+
+Then("I should see the {string} page") do |article|
+    expect(current_path).to eq new_article_path
+end

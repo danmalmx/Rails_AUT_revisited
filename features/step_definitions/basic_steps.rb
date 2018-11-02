@@ -13,11 +13,11 @@ Given("I visit the {string} page") do |string|
 end
 
 When("I click {string}") do |link|
-    click_link link
+    click_link_or_button link
 end 
 
-Then("I click {string} button") do |button|
-    click_on button
+Then("I should return to the {string} page") do |a|
+    expect(current_path).to eq articles_path
 end
 
 Given("I am on the {string} page") do |edit_page|
@@ -28,10 +28,16 @@ Given("I am on the Edit article page") do
     visit edit_article_path(@article)
 end
 
-Then("I should see {string} button") do |edit|
-    expect(page).to have_button edit
-end
+When("I click on {string} content {string} button") do |article_id, edit|
+    article = Articles.find_by(content: article_id)
+    within("#_#{article.content}") do
+      expect(page).to have_button edit
+    end
+  end
 
+When("I see the {string} content") do |text|
+    expect(page).to have_content text
+end
 
 Then("stop") do
     save_and_open_page

@@ -9,11 +9,10 @@ Feature: Edit articles
             | title         | content                                |
             | Learn Rails 5 | Excited about learning a new framework |
         And I visit the 'landing' page
-        
 
     Scenario: Successfully able to edit article
-        Then I should see "Learn Rails 5"
-        And I click 'Edit' button
+        When I see the "Excited about learning a new framework" content 
+        And I click "Edit"
         And I fill in 'Title' with 'Learning Rails again'
         And I fill in 'Content' with 'Never to late to learn again'
         And I click 'Save Article'
